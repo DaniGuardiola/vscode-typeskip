@@ -4,6 +4,7 @@
 	"description": "Focus on your runtime code by hiding TypeScript types.",
 	"version": "1.0.0",
 	"publisher": "diola",
+	"icon": "logo.png",
 	"engines": {
 		"vscode": "^1.96.0"
 	},
