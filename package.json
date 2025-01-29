@@ -2,7 +2,7 @@
 	"name": "typeskip",
 	"displayName": "TypeSkip",
 	"description": "Focus on your runtime code by hiding TypeScript types.",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"publisher": "diola",
 	"icon": "logo.png",
 	"engines": {
