@@ -8,9 +8,19 @@ Focus on your runtime code by hiding TypeScript types.
 
 ![An example of how the code looks with the extension enabled](images/code.gif)
 
-TypeSkip lets you hide all **type-specific** code (type aliases, interfaces, type annotations...) in-place when editing `.ts` and `.tsx` files.
+TypeSkip lets you hide all **type-specific** code (type aliases, interfaces, type annotations...) in-place when editing `.ts` and `.tsx` files in Visual Studio Code.
 
 Some projects (like libraries) often combine complex types with complex runtime logic, making code hard to understand. With TypeSkip, you can temporarily forget about types and focus on your runtime code instead.
+
+## Installation
+
+[TypeSkip](https://marketplace.visualstudio.com/items?itemName=diola.typeskip) is available in the Extensions Marketplace.
+
+It can also be installed by launching Quick Open (Ctrl+P or ⌘P) from VS Code, pasting the following command, and pressing enter.
+
+```
+ext install diola.typeskip
+```
 
 ## Features
 
