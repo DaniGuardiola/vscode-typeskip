@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/logo.png" alt="TypeSkip logo" width="150">
+  <img src="logo.png" alt="TypeSkip logo" width="150">
 </p>
 
 <h1 align="center">TypeSkip</h1>
