@@ -1,5 +1,25 @@
 import * as vscode from "vscode";
 
+// stole this from https://stackoverflow.com/a/78415993
+export function showNotification(message: string, duration: number) {
+	vscode.window.withProgress(
+		{ location: vscode.ProgressLocation.Notification },
+		async (progress) => {
+			const steps = 100;
+			const delay = duration / steps;
+
+			for (let i = 0; i <= steps; i++) {
+				await new Promise<void>((resolve) => {
+					setTimeout(() => {
+						progress.report({ increment: 1, message: message });
+						resolve();
+					}, delay);
+				});
+			}
+		},
+	);
+}
+
 const ID = "typeskip";
 const DEFAULT_OPACITY = 0.2;
 
@@ -41,7 +61,7 @@ async function activate(context: vscode.ExtensionContext) {
 		const msgAction = enabled ? "now hidden" : "no longer hidden";
 		const msgContext = scope === "global" ? "globally" : "for this workspace";
 		const msg = `TypeScript types are ${msgAction} ${msgContext}.`;
-		vscode.window.showInformationMessage(msg);
+		showNotification(msg, 5000);
 
 		update();
 	}
