@@ -1,4 +1,7 @@
-# TypeSkip
+<div style="display: flex; align-items: flex-end; justify-content: center; text-align: center; margin-bottom: 20px;">
+  <img src="images/logo.png" alt="TypeSkip logo" style="width: 150px; height: auto; margin-right: 10px;">
+  <h1 style="margin: 0; font-size: 2em;">TypeSkip</h1>
+</div>
 
 Focus on your runtime code by hiding TypeScript types.
 
