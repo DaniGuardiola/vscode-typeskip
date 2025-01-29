@@ -1,0 +1,72 @@
+{
+	"name": "typeskip",
+	"displayName": "TypeSkip",
+	"description": "Focus on your runtime code by hiding TypeScript types.",
+	"version": "1.0.0",
+	"engines": {
+		"vscode": "^1.96.0"
+	},
+	"categories": ["Visualization", "Other", "Programming Languages"],
+	"main": "./out/extension.js",
+	"activationEvents": ["onStartupFinished"],
+	"contributes": {
+		"commands": [
+			{
+				"command": "typeskip.workspaceEnable",
+				"title": "TypeSkip: Hide TypeScript types (Workspace)",
+				"enablement": "typeskip.activated && !typeskip.workspaceEnabled"
+			},
+			{
+				"command": "typeskip.workspaceDisable",
+				"title": "TypeSkip: Show TypeScript types (Workspace)",
+				"enablement": "typeskip.activated && typeskip.workspaceEnabled"
+			},
+			{
+				"command": "typeskip.workspaceToggle",
+				"title": "TypeSkip: Toggle TypeScript types visibility (Workspace)"
+			},
+			{
+				"command": "typeskip.globalEnable",
+				"title": "TypeSkip: Hide TypeScript types (Global)",
+				"enablement": "typeskip.activated && !typeskip.globalEnabled"
+			},
+			{
+				"command": "typeskip.globalDisable",
+				"title": "TypeSkip: Show TypeScript types (Global)",
+				"enablement": "typeskip.activated && typeskip.globalEnabled"
+			},
+			{
+				"command": "typeskip.globalToggle",
+				"title": "TypeSkip: Toggle TypeScript types visibility (Global)"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "TypeSkip",
+			"properties": {
+				"typeskip.opacity": {
+					"type": "number",
+					"default": 0.2,
+					"minimum": 0,
+					"maximum": 1,
+					"description": "Controls the opacity of hidden TypeScript types. Accepts values between 0 (fully transparent) and 1 (fully visible)."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "bun run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"lint": "biome check"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/node": "20.x",
+		"@types/vscode": "^1.96.0",
+		"typescript": "^5.7.2"
+	},
+	"dependencies": {
+		"ts-blank-space": "^0.5.0"
+	}
+}
