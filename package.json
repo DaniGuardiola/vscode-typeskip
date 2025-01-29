@@ -3,10 +3,12 @@
 	"displayName": "TypeSkip",
 	"description": "Focus on your runtime code by hiding TypeScript types.",
 	"version": "1.0.0",
+	"publisher": "diola",
 	"engines": {
 		"vscode": "^1.96.0"
 	},
 	"categories": ["Visualization", "Other", "Programming Languages"],
+	"repository": "https://github.com/daniguardiola/vscode-typeskip",
 	"main": "./out/extension.js",
 	"activationEvents": ["onStartupFinished"],
 	"contributes": {
