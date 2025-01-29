@@ -38,6 +38,10 @@ In the status bar, you can see the current state, toggle it, and quickly jump to
 
 ## Release Notes
 
+### 1.1.0
+
+- Notifications now go away automatically after 5 seconds.
+
 ### 1.0.0
 
 Initial release.
