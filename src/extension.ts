@@ -168,14 +168,14 @@ async function activate(context: vscode.ExtensionContext) {
 		const tooltip = new vscode.MarkdownString(
 			`
 
-|     |     |     |      |
-| --- | --- | --- | ---: |
-| ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ | Workspace: | ⠀⠀${state.workspace ? "$(eye-closed) hidden" : "$(eye) visible"} | - [toggle](command:${ID}.workspaceToggle) |
-|                               | Global:    | ⠀⠀${state.global ? "$(eye-closed) hidden" : "$(eye) visible"}    | - [toggle](command:${ID}.globalToggle)    |
+|     |      |     |      |
+| --- | ---: | --- | ---: |
+| [$(triangle-up) Increase opacity](command:${ID}.increaseOpacity)⠀⠀⠀ | Workspace: | ⠀${state.workspace ? "$(eye-closed) hidden" : "$(eye) visible"} | - [toggle](command:${ID}.workspaceToggle) |
+| [$(triangle-down) Decrease opacity](command:${ID}.decreaseOpacity)                  | Global:    | ⠀${state.global ? "$(eye-closed) hidden" : "$(eye) visible"}    | - [toggle](command:${ID}.globalToggle)    |
 
 ---
 
-Click to hide/show TypeScript types in this workspace - [$(gear) configure opacity](command:workbench.action.openSettings?%7B%22query%22%3A%22${ID}.opacity%22%2C%22target%22%3A%22user%22%7D)
+Click to hide/show TypeScript types in this workspace.
 
 `.trim(),
 		);
@@ -210,6 +210,22 @@ Click to hide/show TypeScript types in this workspace - [$(gear) configure opaci
 	register("globalEnable", "global", true);
 	register("globalDisable", "global", false);
 	register("globalToggle", "global", () => !state.global);
+
+	vscode.commands.registerCommand(`${ID}.increaseOpacity`, () => {
+		const newOpacity = Math.min(opacity + 0.1, 1);
+		opacity = newOpacity;
+		decorationType.dispose();
+		decorationType = createDecorationType(opacity);
+		update();
+	});
+
+	vscode.commands.registerCommand(`${ID}.decreaseOpacity`, () => {
+		const newOpacity = Math.max(opacity - 0.1, 0);
+		opacity = newOpacity;
+		decorationType.dispose();
+		decorationType = createDecorationType(opacity);
+		update();
+	});
 
 	// updates
 	// -------

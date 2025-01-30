@@ -49,6 +49,14 @@
 			{
 				"command": "typeskip.globalToggle",
 				"title": "TypeSkip: Toggle TypeScript types visibility (Global)"
+			},
+			{
+				"command": "typeskip.increaseOpacity",
+				"title": "TypeSkip: Increase opacity of hidden types"
+			},
+			{
+				"command": "typeskip.decreaseOpacity",
+				"title": "TypeSkip: Decrease opacity of hidden types"
 			}
 		],
 		"configuration": {
