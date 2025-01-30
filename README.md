@@ -32,7 +32,7 @@ Use commands to hide (and show) TypeScript types in the current workspace or glo
 
 ![A demo of the commands](images/commands.gif)
 
-In the status bar, you can see the current state, toggle it, and quickly jump to the opacity setting.
+In the status bar, you can see the current state, toggle it, and quickly adjust the opacity.
 
 ![A demo of the status bar](images/status-bar.gif)
 
