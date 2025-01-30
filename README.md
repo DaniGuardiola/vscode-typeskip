@@ -38,6 +38,11 @@ In the status bar, you can see the current state, toggle it, and quickly jump to
 
 ## Release Notes
 
+### 1.2.0
+
+- Added opacity controls to the status bar.
+- Added commands to increase and decrease opacity.
+
 ### 1.1.0
 
 - Notifications now go away automatically after 5 seconds.
